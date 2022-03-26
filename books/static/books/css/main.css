@@ -1,0 +1,15 @@
+/* .carousel {
+    width: 1080px !important;
+    height:360px !important;
+  } */
+
+.row {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.popular{
+    border: 3px solid #f60000;
+    
+}
+
