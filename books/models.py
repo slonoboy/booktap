@@ -1,4 +1,4 @@
-from tkinter import CASCADE
+# from tkinter import CASCADE
 from unittest.util import _MAX_LENGTH
 from django.db import models
 from django.conf import settings
@@ -47,7 +47,7 @@ class Account(AbstractBaseUser):
     last_name = models.CharField(max_length=30, unique=False)
     phone_number = models.CharField(max_length=30, unique=False)
     id_number = models.CharField(max_length=30, unique=False)
-    library_id = models.ForeignKey(Library)
+    library_id = models.ForeignKey(Library,on_delete=models.CASCADE)
     date_joined = models.DateTimeField(verbose_name='date joined', auto_now_add=True)
     last_login = models.DateTimeField(verbose_name='last login', auto_now=True)
     is_admin = models.BooleanField(default=False)
