@@ -22,7 +22,8 @@
             </div>
             <div class="card-body">
               <div class="m-sm-4">
-                <form>
+                <form method="POST">
+                  {% csrf_token %}
                   <div class="form-group">
                     <label>ИИН</label>
                     <input class="form-control form-control-lg" type="text" name="username" placeholder="Введите ИИН">
@@ -33,7 +34,7 @@
                     <input class="form-control form-control-lg" type="password" name="password" placeholder="Введите пароль">
                   </div>
                   <div class="text-center mt-3">
-                    <a href="index.html" class="btn btn-lg btn-danger"><p class="cc">Sign in</p></a>
+                    <input type="submit" class="btn btn-lg btn-danger" name="signin" value="Sign in">
                     <hr class="hrhr">
                     </div>
                     <!-- You don’t have an account?

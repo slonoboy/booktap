@@ -17,6 +17,10 @@ def signin(request):
     return render(request,'books/signin.html')
 
 def signup(request):
+    if request.POST.get("signin"):
+        print(request.POST.get("username"))
+        print(request.POST.get("password"))
+        
     return render(request,'books/signup.html')
 
 def books(request):
@@ -32,3 +36,7 @@ def payment(request):
     return render(request,'books/payment.html')
 def zakazy(request):
     return render(request,'books/zakazy.html')
+def reg_book(request):
+    return render(request,'books/reg_book.html')
+def moderator(request):
+    return render(request,'books/moderator.html')
