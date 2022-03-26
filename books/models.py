@@ -1,7 +1,4 @@
-# from tkinter import CASCADE
-from unittest.util import _MAX_LENGTH
 from django.db import models
-from django.conf import settings
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
 class Library(models.Model):
@@ -78,13 +75,13 @@ class Book(models.Model):
     book_name = models.CharField(max_length=50,null = False, blank=False)
     author = models.CharField(max_length=50,null=False, blank=False)
     genres = models.CharField(max_length=150, blank = True)
-    image = models.ImageField(null= False, blank = False)
+    image = models.CharField(max_length=500)
     
 
 class BookOwned(models.Model):
     book_id = models.ForeignKey(Book, on_delete=models.CASCADE)
     original_library = models.ForeignKey(Library, on_delete=models.CASCADE)
-    current_library = models.ForeignKey(Library, on_delete=models.CASCADE)
+    #current_library = models.ForeignKey(Library, on_delete=models.CASCADE)
         
     
 class Borrow(models.Model):
@@ -106,7 +103,7 @@ class Request(models.Model):
     user_id = models.ForeignKey(Account, on_delete=models.CASCADE)
     book_id = models.ForeignKey(BookOwned, on_delete=models.CASCADE)
     from_lib = models.ForeignKey(Library, on_delete=models.CASCADE)
-    to_lib = models.ForeignKey(Library, on_delete=models.CASCADE)
+    #to_lib = models.ForeignKey(Library, on_delete=models.CASCADE)
     request_date = models.DateField("date created", auto_now_add=True)
     deliver_date = models.DateField('deliver date', blank=True, default=None, null=True)
     isDelivering = models.BooleanField(default=True)
