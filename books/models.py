@@ -60,7 +60,7 @@ class Account(AbstractBaseUser):
 
     objects = MyAccountManager()
 
-    def __str__(self):
+    def str(self):
         return self.email
 
     # For checking permissions. to keep it simple all admin have ALL permissons
@@ -99,7 +99,6 @@ class Review(models.Model):
     rating = models.BooleanField(null = True, blank= False)
     book_id = models.ForeignKey(Book, on_delete=models.CASCADE)
     user_id = models.ForeignKey(Account, on_delete=models.CASCADE)
-
 
 class Request(models.Model):
     user_id = models.ForeignKey(Account, on_delete=models.CASCADE)

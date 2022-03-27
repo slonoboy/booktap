@@ -17,14 +17,21 @@ def profil_unik(request):
 
 @login_required(login_url='/')
 def ranking(request):
+    sr = SocialRating.objects.all()
+    ac = User.objects.all()
+    context = { 
+        "score":sr,
+        "users":ac
+    }
     if request.POST.get("logout"):
         logout(request)
         return redirect('/')
-    return render(request,'books/index.html')
+    return render(request,'books/index.html',context=context)
 
 @login_required(login_url='/')
 def profile(request):
     userr = Account.objects.filter(id_number=request.user.username)
+    print(request.user.username)
     context = { 
         "userr" : userr
     }
@@ -34,7 +41,6 @@ def profile(request):
     return render(request,'books/profile.html',context=context)
 
 def signin(request):
-
 
     if request.POST.get("signin"):
         username = request.POST.get("username")
@@ -55,7 +61,7 @@ def signup(request):
     if request.POST.get("signup"):
         user = User.objects.create_user(username=request.POST.get("id_num"),first_name=request.POST.get("name"),last_name=request.POST.get("last_name"),password=request.POST.get("password"))
         user.save()
-        acc = Account.objects.create(email=request.POST.get("email"),password=request.POST.get("password"),first_name=request.POST.get("name"),last_name=request.POST.get("last_name"),phone_number=request.POST.get("phonw"),id_number=request.POST.get("id_num"),library_id=Library(id=1),date_joined='2021-03-27',last_login='2021-03-27',is_admin=False,is_active=True,is_librarian=False,is_premium=True,is_staff=False,is_superuser=False)
+        # acc = Account.objects.create(email=request.POST.get("email"),password=request.POST.get("password"),first_name=request.POST.get("name"),last_name=request.POST.get("last_name"),phone_number=request.POST.get("phonw"),id_number=request.POST.get("id_num"),library_id=Library(id=1),date_joined='2021-03-27',last_login='2021-03-27',is_admin=False,is_active=True,is_librarian=False,is_premium=True,is_staff=False,is_superuser=False)
     return render(request,'books/signup.html')
 @login_required(login_url='/')
 def books(request):
