@@ -45,7 +45,7 @@
               
             </ul>
             
-            <form method="POST">
+            <form method="POST" >
               {% csrf_token %}
             <input type="submit" name="logout" class="btn btn-outline-danger" value="Выйти"></input>
 
@@ -64,7 +64,7 @@
           <div class="col">
             <h2 style="text-align: center;">Регистрация книги</h2>
             <br>
-            <form method="POST">
+            <form method="POST" enctype="multipart/form-data">
               {% csrf_token %}
             <div class="input-group mb-3">
                 <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Название книги" name="book_name">

@@ -13,7 +13,7 @@
 
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{% url 'main' %}">
                 <!-- Kitap-tap -->
                 <img src="{% static 'books/images/logo2.png'%}" alt="" width="100" height="">
               </a>
@@ -57,12 +57,12 @@
     <div class="container" style="margin-top: 58px;">
         <div class="row" style="margin-top: 5rem;"> 
           <div class="col">
-            <img src="https://cdn.f.kz/prod/1540/1539578_550.jpg" alt="">
+            <img src="/media/{{book.image}}" alt="" width="320px" height="320px">
             <p style="text-align: center;">4.5</p>
           </div>
           <div class="col-6">
-              <p>Мухтар Ауезов</p>
-              <h2>Абай Жолы. Том 4 <button type="button" class="btn btn-outline-secondary" style="margin-bottom: 8px;">Заказать</button></h2>
+              <p>{{book.author}}</p>
+              <h2>{{book.book_name}} <button type="button" class="btn btn-outline-secondary" style="margin-bottom: 8px;">Заказать</button></h2>
 
               
               <div class="card text-center">
@@ -76,10 +76,7 @@
                   </ul>
                 </div>
                 <div class="card-body">
-                  <p class="card-text">Главный герой романа — реальное историческое лицо, великий поэт, 
-                      основоположник казахской письменной литературы, просветитель Абай Кунанбаев. 
-                      В романе развернута панорама полной драматизма и противоречий народной жизни, 
-                      быта и нравов кочевых и оседлых степняков конца XIX века, показана широта и красота вольнолюбивой души казахского народа, его мечты о лучшем.</p>
+                  <p class="card-text">{{book.description}}</p>
                   
                 </div>
               </div>
