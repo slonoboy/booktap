@@ -5,7 +5,7 @@ from .views import*
 urlpatterns=[
     path('profil_unik/',profil_unik,name='profil_unik'),
     path('ranking/',ranking,name='ranking'),
-    path('profile/',profile,name='profile'),
+    path('profile/<int:assetid>',profile,name='profile'),
     path('',signin,name='signin'),
     path('signup/',signup,name='signup'),
     path('books/',books,name='books'),
