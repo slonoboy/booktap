@@ -12,9 +12,6 @@ def profil_unik(request):
 
 
 def ranking(request):
-    if request.POST.get("logout"):
-        logout(request)
-        return redirect('/')
     return render(request,'books/index.html')
 
 def profile(request):
@@ -44,38 +41,19 @@ def signup(request):
     return render(request,'books/signup.html')
 
 def books(request):
-    if request.POST.get("logout"):
-        logout(request)
-        return redirect('/')
     return render(request,'books/books.html')
 
 def korzina(request):
-    if request.POST.get("logout"):
-        logout(request)
-        return redirect('/')
     return render(request,'books/korzina.html')
 def listq(request):
-    if request.POST.get("logout"):
-        logout(request)
-        return redirect('/')
     return render(request,'books/list.html')
 def main(request):
-    if request.POST.get("logout"):
-        logout(request)
-        return redirect('/')
     return render(request,'books/main.html')
 def payment(request):
-    if request.POST.get("logout"):
-        logout(request)
-        return redirect('/')
     return render(request,'books/payment.html')
 def zakazy(request):
-    if request.POST.get("logout"):
-        logout(request)
-        return redirect('/')
     return render(request,'books/zakazy.html')
 def reg_book(request):
-<<<<<<< HEAD
     if request.POST.get("subm_book"):
         book_name = request.POST.get("book_name")
         author = request.POST.get("author")
@@ -84,17 +62,9 @@ def reg_book(request):
         file = request.FILES["file"]
         file_name = default_storage.save(file.name,file)
         file_url = default_storage.path(file_name)
-        book = Book.objects.create(book_name = book_name, author = author, genres = genre, image = file_url)
+        book = Book.objects.create(book_name = book_name, author = author, genres = genre, image = file_url, description = opisanie)
 
 
-=======
-    if request.POST.get("logout"):
-        logout(request)
-        return redirect('/')
->>>>>>> 962db44b1d63bcc09252dfee131a7048978f87c2
     return render(request,'books/reg_book.html')
 def moderator(request):
-    if request.POST.get("logout"):
-        logout(request)
-        return redirect('/')
     return render(request,'books/moderator.html')
