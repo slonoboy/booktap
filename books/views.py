@@ -127,6 +127,16 @@ def moderator(request):
         return redirect('/')
     return render(request,'books/moderator.html')
 
+
 @login_required(login_url='/')
 def profilenu(request):
     return render(request,'books/profile_unik_nu.html')
+
+
+@login_required(login_url='/')
+def profile_unik_enu(request):
+    if request.POST.get("logout"):
+        logout(request)
+        return redirect('/')
+    return render(request,'books/profile_unik_enu.html')
+
