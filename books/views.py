@@ -59,10 +59,10 @@ def reg_book(request):
         author = request.POST.get("author")
         genre = request.POST.get("genre")
         opisanie = request.POST.get("opisanie")
-        file = request.FILES["file"]
+        file = request.FILES["myFile"]
         file_name = default_storage.save(file.name,file)
         file_url = default_storage.path(file_name)
-        book = Book.objects.create(book_name = book_name, author = author, genres = genre, image = file_url, description = opisanie)
+        book = Book.objects.create(book_name = book_name, author = author, description = opisanie, genres = genre, image = file_url )
 
 
     return render(request,'books/reg_book.html')
