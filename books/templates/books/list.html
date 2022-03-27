@@ -57,138 +57,24 @@
 
       <div class="container" style="margin-top: 5rem;">
         <div class="row">
+          {% for book in books %}
           <div class="col">
               <div class="card" style="width: 14rem;">
-            <img src="https://images.cdn3.stockunlimited.net/preview1300/book-icon_1951773.jpg" class="card-img-top" alt="...">
+            <img src="/media/{{book.image}}" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Абай жолы</h5>
-              <p class="card-text">Мухтар Ауезов</p>
-              <p class="card-text">Назарбаева Университет</p>
+              <h5 class="card-title">{{book.book_name}}</h5>
+              <p class="card-text">{{book.author}}</p>
             </div>
             
             <div class="card-body">
               <a href="#" class="card-link">Заказать книгу</a>
               
             </div>
-          </div>
-        </div>
-          <div class="col">
-            
-                <div class="card" style="width: 14rem;">
-              <img src="https://images.cdn3.stockunlimited.net/preview1300/book-icon_1951773.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Кирпичи</h5>
-                <p class="card-text">Данияр Сугралинов</p>
-                <p class="card-text">AITU</p>
-              </div>
-              
-              <div class="card-body">
-                <a href="#" class="card-link">Заказать книгу</a>
-                
-              </div>
             </div>
           </div>
-          <div class="col">
-            
-                <div class="card" style="width: 14rem;">
-              <img src="https://images.cdn3.stockunlimited.net/preview1300/book-icon_1951773.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Зов Ктулху</h5>
-                <p class="card-text">Говард Лавкрафт</p>
-                <p class="card-text">ENU</p>
-              </div>
-              
-              <div class="card-body">
-                <a href="#" class="card-link">Заказать книгу</a>
-                
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            
-                <div class="card" style="width: 14rem;">
-              <img src="https://images.cdn3.stockunlimited.net/preview1300/book-icon_1951773.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Гарри Поттер</h5>
-                <p class="card-text">Джоун Роулинг</p>
-                <p class="card-text">ENU</p>
-              </div>
-              
-              <div class="card-body">
-                <a href="#" class="card-link">Заказать книгу</a>
-                
-              </div>
-            </div>
-          
+          {% endfor %}
         </div>
       </div>
-
-      <div class="row" style="margin-top: 2rem; margin-bottom: 2rem;">
-        <div class="col">
-            <div class="card" style="width: 14rem;">
-          <img src="https://images.cdn3.stockunlimited.net/preview1300/book-icon_1951773.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Абай жолы</h5>
-            <p class="card-text">Мухтар Ауезов</p>
-            <p class="card-text">Назарбаева Университет</p>
-          </div>
-          
-          <div class="card-body">
-            <a href="#" class="card-link">Заказать книгу</a>
-            
-          </div>
-        </div>
-      </div>
-        <div class="col">
-          
-              <div class="card" style="width: 14rem;">
-            <img src="https://images.cdn3.stockunlimited.net/preview1300/book-icon_1951773.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Кирпичи</h5>
-              <p class="card-text">Данияр Сугралинов</p>
-              <p class="card-text">AITU</p>
-            </div>
-            
-            <div class="card-body">
-              <a href="#" class="card-link">Заказать книгу</a>
-              
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          
-              <div class="card" style="width: 14rem;">
-            <img src="https://images.cdn3.stockunlimited.net/preview1300/book-icon_1951773.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Зов Ктулху</h5>
-              <p class="card-text">Говард Лавкрафт</p>
-              <p class="card-text">ENU</p>
-            </div>
-            
-            <div class="card-body">
-              <a href="#" class="card-link">Заказать книгу</a>
-              
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          
-              <div class="card" style="width: 14rem;">
-            <img src="https://images.cdn3.stockunlimited.net/preview1300/book-icon_1951773.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Гарри Поттер</h5>
-              <p class="card-text">Джоун Роулинг</p>
-              <p class="card-text">ENU</p>
-            </div>
-            
-            <div class="card-body">
-              <a href="#" class="card-link">Заказать книгу</a>
-              
-            </div>
-          </div>
-        
-      </div>
-    </div>
 
     <nav aria-label="Page navigation example" >
       <ul class="pagination justify-content-center">

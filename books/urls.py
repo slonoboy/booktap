@@ -1,5 +1,7 @@
 from unicodedata import name
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 
 from .views import*
 
@@ -9,7 +11,7 @@ urlpatterns=[
     path('profile/',profile,name='profile'),
     path('',signin,name='signin'),
     path('signup/',signup,name='signup'),
-    path('books/',books,name='books'),
+    path('books/<int:id>',books,name='books'),
     path('korzina/',korzina,name='korzina'),
     path('list/',listq,name='list'),
     path('main/',main,name='main'),
@@ -24,4 +26,4 @@ urlpatterns=[
     path('profile_unik_enu/', profile_unik_enu, name = 'profil_unik_enu')
 
     # path('device/<int:assetid>/',checker)
-]
+] 
