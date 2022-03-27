@@ -40,7 +40,11 @@
               
             </ul>
             
-            <button type="button" class="btn btn-outline-danger">Выйти</button>
+            <form method="POST">
+              {% csrf_token %}
+            <input type="submit" name="logout" class="btn btn-outline-danger" value="Выйти"></input>
+
+          </form>
           </div>
         </div>
       </nav>
