@@ -27,35 +27,24 @@
           <div class="card">
             <div class="card-body">
               <div class="m-sm-4">
-                <form>
+                <form method="POST">
+                  {% csrf_token %}
+
                   <div class="form-group">
                     <label>Имя</label>
                     <input class="form-control form-control-lg" type="text" name="name" placeholder="Введите свое имя">
                   </div>
                   <div class="form-group">
                     <label>Фамилия</label>
-                    <input class="form-control form-control-lg" type="text" name="company" placeholder="Введите фамилию">
+                    <input class="form-control form-control-lg" type="text" name="last_name" placeholder="Введите фамилию">
                   </div>
                   <div class="form-group">
                     <label>ИИН</label>
-                    <input class="form-control form-control-lg" type="text" name="username" placeholder="Введите ИИН">
+                    <input class="form-control form-control-lg" type="text" name="id_num" placeholder="Введите ИИН">
                   </div>
                   <div class="form-group">
                     <label>Номер</label>
                     <input class="form-control form-control-lg" type="text" name="phonw" placeholder="Введите свой телефон" >
-                  </div>
-                  Школьник или студент
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                      Школьник
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option2" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                      Студент
-                    </label>
                   </div>
                   <div class="form-group">
                     <label>Город</label> <br>
@@ -68,11 +57,20 @@
                   </div>
                   <div class="form-group">
                     <label>Школа</label> <br>
-                    <select class="form-select" aria-label="Default select example">
+                    <select style="width: 150px !important;" class="form-select" aria-label="Default select example">
                       <option selected>Выберите школу</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
+                      <option value="1">КГУ «Школа-лицей №1» акимата города Нур-Султан</option>
+                      <option value="2">КГУ «Школа-гимназия №2 имени Гафу Каирбекова» акимата города Нур-Султан</option>
+                      <option value="3">КГУ "Школа-гимназия №3" акимата города Нур-Султан</option>
+                      <option value="4">КГУ «Школа-гимназия №4 имени Жамбыла Жабаева» акимата города Нур-Султан</option>
+                      <option value="5">КГУ «Гимназия № 5» акимата города Нур-Султан</option>
+                      <option value="6">КГУ «КГУ «Гимназия №6» акимата города Нур-Султан </option>
+                      <option value="7">КГУ «КГУ «Школа-гимназия № 7 имени Гали Орманова» акимата города Нур-Султан</option>
+                      <option value="8">КГУ «КГУ «Средняя школа №8» акимата города Нур-Султан</option>
+                      <option value="9">КГУ «Школа №9 для одаренных детей «Зерде» акимата города Нур-Султан</option>
+                      <option value="10">КГУ «Школа-гимназия №10 имени Жумабека Ташенова» акимата города Нур-Султан</option>
+                      <option value="11">КГУ «Комплекс «Детский сад – начальная школа №12» акимата города Нур-Султан</option>
+                      <option value="12">КГУ «Средняя школа №13» акимата города Нур-Султан</option>
                     </select>
                   </div>
                   <div class="form-group">
@@ -88,7 +86,7 @@
                     <input class="form-control form-control-lg" type="password" name="passwordc" placeholder="Подтвердите пароль">
                   </div>
                   <div class="text-center mt-3">
-                    <a href="index.html" class="btn btn-lg btn-danger"><p class="cc">Зарегистрироваться </p></a>
+                    <input type="submit" class="btn btn-lg btn-danger cc" name="signup" value="Зарегистрироваться">
                     <hr>
                     <p class="termstext"> 
                       Регистрируясь, вы соглашаетесь с нашими Условиями.
