@@ -3,10 +3,10 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
 class Library(models.Model):
-    library_name = models.CharField(max_length=100, null = False, blank = False)
-    town = models.CharField(max_length=50, null = False, blank = False)      
-    address = models.CharField(max_length=50, null = False, blank = False)
-    call_number = models.CharField(max_length=50, null = False, blank = False)
+    library_name = models.CharField(max_length=100, null = True, blank = True)
+    town = models.CharField(max_length=50, null = True, blank = True)      
+    address = models.CharField(max_length=50, null = True, blank = True)
+    call_number = models.CharField(max_length=50, null = True, blank = True)
     
 
 class MyAccountManager(BaseUserManager):
@@ -73,7 +73,7 @@ class Account(AbstractBaseUser):
     
 
 class Book(models.Model):
-    book_name = models.CharField(max_length=50,null = False, blank=False)
+    book_name = models.CharField(max_length=50,null = True, blank=False)
     author = models.CharField(max_length=50,null=False, blank=False)
     description = models.TextField(max_length=500, null = True, blank  = True)
     genres = models.CharField(max_length=150, blank = True)
@@ -96,7 +96,7 @@ class Borrow(models.Model):
     
 class Review(models.Model):
     text = models.TextField(max_length=5000, null=False, blank=False)
-    rating = models.BooleanField(null = False, blank= False)
+    rating = models.BooleanField(null = True, blank= False)
     book_id = models.ForeignKey(Book, on_delete=models.CASCADE)
     user_id = models.ForeignKey(Account, on_delete=models.CASCADE)
 
@@ -114,7 +114,7 @@ class Request(models.Model):
     
 class Transaction(models.Model):
     user_id = models.ForeignKey(Account, on_delete=models.CASCADE)
-    amount = models.FloatField(blank = False, null = False)
+    amount = models.FloatField(blank = True, null = True)
        
 
 class SocialRating(models.Model):

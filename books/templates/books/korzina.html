@@ -24,7 +24,11 @@
           <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
               <li class="nav-item">
+<<<<<<< HEAD
+                <a class="nav-link active" aria-current="page" href="{% url 'profile'%}">Профиль</a>
+=======
                 <a class="nav-link" aria-current="page" href="">Профиль</a>
+>>>>>>> 2a3308ea21e7d5d095acb3216d58c546164b0b7d
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Заказы</a>
@@ -47,8 +51,12 @@
               
             </ul>
             
-            <button type="button" class="btn btn-outline-danger">Выйти</button>
-          </div>
+            <form method="POST">
+              {% csrf_token %}
+            <input type="submit" name="logout" class="btn btn-outline-danger" value="Выйти"></input>
+
+          </form>          
+        </div>
         </div>
       </nav>
 
