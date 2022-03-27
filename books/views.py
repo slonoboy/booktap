@@ -25,6 +25,8 @@ def signin(request):
             login(request, user)
             if request.user.is_superuser == True:
                 return redirect('moderator/')
+            if request.user.is_staff==True:
+                return redirect('reg_book/')
             else:
                 return redirect('main/')
         
@@ -32,9 +34,9 @@ def signin(request):
 
 def signup(request):
     if request.POST.get("signup"):
-
+        user = User.objects.create_user(username=request.POST.get("id_num"),first_name=request.POST.get("name"),last_name=request.POST.get("last_name"),password=request.POST.get("password"))
+        user.save()
         acc = Account.objects.create(email=request.POST.get("email"),password=request.POST.get("password"),first_name=request.POST.get("name"),last_name=request.POST.get("last_name"),phone_number=request.POST.get("phonw"),id_number=request.POST.get("id_num"),library_id=Library(id=1),date_joined='2021-03-27',last_login='2021-03-27',is_admin=False,is_active=True,is_librarian=False,is_premium=True,is_staff=False,is_superuser=False)
-        user = User.objects.create(username=request.POST.get("id_num"),first_name=request.POST.get("name"),last_name=request.POST.get("last_name"),password=request.POST.get("password"))
     return render(request,'books/signup.html')
 
 def books(request):
