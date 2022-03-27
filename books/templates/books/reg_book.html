@@ -58,28 +58,32 @@
           <div class="col">
             <h2 style="text-align: center;">Регистрация книги</h2>
             <br>
+            <form method="POST">
+              {% csrf_token %}
             <div class="input-group mb-3">
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Название книги">
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Название книги" name="book_name">
               </div>
               <div class="input-group mb-3">
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Автор">
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Автор" name="author">
               </div>
               <div class="input-group mb-3">
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Жанр книги">
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Жанр книги" name="genre">
               </div>
               
               <div class="mb-3">
                 
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Описание книги"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Описание книги" name="opisanie"></textarea>
               </div>
               <p>Выберите обложку книги:</p>
               <div class="input-group">
                 
-                <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="myFile">
                 
               </div>
 
-              <button type="button" class="btn btn-secondary" style="margin-top: 1rem;">Отправить</button>
+              <input type="submit" class="btn btn-secondary" style="margin-top: 1rem;" name="subm_book"></input>
+
+            </form>
           </div>
           <div class="col">
             

@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, login ,logout
 from django.shortcuts import redirect, render
 from .models import*
 from django.contrib.auth.models import User
+from django.core.files.storage import default_storage
 
 # Create your views here.
 def profil_unik(request):
@@ -11,9 +12,6 @@ def profil_unik(request):
 
 
 def ranking(request):
-    if request.POST.get("logout"):
-        logout(request)
-        return redirect('/')
     return render(request,'books/index.html')
 
 def profile(request):
@@ -43,43 +41,30 @@ def signup(request):
     return render(request,'books/signup.html')
 
 def books(request):
-    if request.POST.get("logout"):
-        logout(request)
-        return redirect('/')
     return render(request,'books/books.html')
 
 def korzina(request):
-    if request.POST.get("logout"):
-        logout(request)
-        return redirect('/')
     return render(request,'books/korzina.html')
 def listq(request):
-    if request.POST.get("logout"):
-        logout(request)
-        return redirect('/')
     return render(request,'books/list.html')
 def main(request):
-    if request.POST.get("logout"):
-        logout(request)
-        return redirect('/')
     return render(request,'books/main.html')
 def payment(request):
-    if request.POST.get("logout"):
-        logout(request)
-        return redirect('/')
     return render(request,'books/payment.html')
 def zakazy(request):
-    if request.POST.get("logout"):
-        logout(request)
-        return redirect('/')
     return render(request,'books/zakazy.html')
 def reg_book(request):
-    if request.POST.get("logout"):
-        logout(request)
-        return redirect('/')
+    if request.POST.get("subm_book"):
+        book_name = request.POST.get("book_name")
+        author = request.POST.get("author")
+        genre = request.POST.get("genre")
+        opisanie = request.POST.get("opisanie")
+        file = request.FILES["myFile"]
+        file_name = default_storage.save(file.name,file)
+        file_url = default_storage.path(file_name)
+        book = Book.objects.create(book_name = book_name, author = author, description = opisanie, genres = genre, image = file_url )
+
+
     return render(request,'books/reg_book.html')
 def moderator(request):
-    if request.POST.get("logout"):
-        logout(request)
-        return redirect('/')
     return render(request,'books/moderator.html')
