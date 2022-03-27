@@ -34,7 +34,8 @@ def profile(request):
     return render(request,'books/profile.html',context=context)
 
 def signin(request):
-    
+
+
     if request.POST.get("signin"):
         username = request.POST.get("username")
         password = request.POST.get("password")
@@ -94,6 +95,8 @@ def zakazy(request):
     return render(request,'books/zakazy.html')
 @login_required(login_url='/')
 def reg_book(request):
+    if request.user.is_staff == False:
+        return redirect('/main/')
     if request.POST.get("logout"):
         logout(request)
         return redirect('/')
@@ -111,6 +114,8 @@ def reg_book(request):
     return render(request,'books/reg_book.html')
 @login_required(login_url='/')
 def moderator(request):
+    if request.user.is_superuser == False:
+        return redirect('/main/')
     if request.POST.get("logout"):
         logout(request)
         return redirect('/')
