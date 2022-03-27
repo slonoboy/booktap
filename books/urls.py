@@ -1,3 +1,4 @@
+from unicodedata import name
 from django.urls import path
 
 from .views import*
@@ -16,5 +17,6 @@ urlpatterns=[
     path('zakazy/',zakazy,name='zakazy'),
     path('reg_book/',reg_book,name='reg_book'),
     path('moderator/',moderator,name='moderator'),
+    path('profile_unik_enu/', profile_unik_enu, name = 'profil_unik_enu')
     # path('device/<int:assetid>/',checker)
 ]
