@@ -36,13 +36,14 @@
 
     </div>
   </nav>
+  {% for t in userr %}
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center ">
         <div class="panel panel-default">
           <div class="userprofile social ">
             <div class="userpic"> <img src="{% static 'books/images/unnamed.jpeg'%}" alt="" class="userpicimg"> </div>
-            <h3 class="username">Bekarys Magauiya</h3>
+            <h3 class="username">{{t.first_name}}</h3>
             <p>@ob1one</p>
           </div>
           <div class="col-md-12 center">
@@ -122,7 +123,9 @@
         </div>
       </div>
     </div>
+    
   </div>
+  {% endfor %}
 </body>
 
 </html>

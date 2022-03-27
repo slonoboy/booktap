@@ -75,23 +75,13 @@ WSGI_APPLICATION = 'kitaptap.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-
     'default': {
-
-        'ENGINE': 'django.db.backends.postgresql',
-
-        'NAME': "d3ljmb97vofvdl",
-
-        'USER': 'icbenavlyfdrjx',
-
-        'PASSWORD': '939a94c450e29d38b5596a3406021adaef8eb473687c89e391faac4d60f4bec3',
-
-        'HOST': 'ec2-44-194-92-192.compute-1.amazonaws.com',
-
-        'PORT': '5432',
-
+        'ENGINE': 'djongo',
+        'NAME': 'BilimH',
+        'CLIENT': {
+           'host': 'mongodb+srv://maagauiya:loopcool@cluster0.f7uie.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+        }
     }
-
 }
 
 
