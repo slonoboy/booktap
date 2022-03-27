@@ -17,11 +17,11 @@ def profil_unik(request):
 
 @login_required(login_url='/')
 def ranking(request):
-    sr = SocialRating.objects.all()
-    ac = User.objects.all()
+    score = SocialRating.objects.all()
+    users = User.objects.all()
     context = { 
-        "score":sr,
-        "users":ac
+        "score":score,
+        "users":users,
     }
     if request.POST.get("logout"):
         logout(request)
