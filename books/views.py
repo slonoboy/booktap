@@ -62,8 +62,8 @@ def reg_book(request):
         file = request.FILES["myFile"]
         file_name = default_storage.save(file.name,file)
         file_url = default_storage.path(file_name)
-        book = Book.objects.create(book_name = book_name, author = author, description = opisanie, genres = genre, image = file_url )
-
+        book = Book.objects.create(book_name = book_name, author = author, description = opisanie, genres = genre, image = file_url)
+        
 
     return render(request,'books/reg_book.html')
 def moderator(request):
