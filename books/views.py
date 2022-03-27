@@ -132,6 +132,10 @@ def moderator(request):
 def profilenu(request):
     return render(request,'books/profile_unik_nu.html')
 
+@login_required(login_url='/')
+def payment_info(request):
+    return render(request,'books/payment_info.html')
+
 
 @login_required(login_url='/')
 def profile_unik_enu(request):

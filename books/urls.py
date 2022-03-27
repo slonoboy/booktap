@@ -14,6 +14,7 @@ urlpatterns=[
     path('list/',listq,name='list'),
     path('main/',main,name='main'),
     path('payment/',payment,name='payment'),
+    path('payment_info/',payment_info,name='payment_info'),
     path('zakazy/',zakazy,name='zakazy'),
     path('reg_book/',reg_book,name='reg_book'),
     path('moderator/',moderator,name='moderator'),

@@ -1,0 +1,54 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{% static 'books/css/style.css'%}">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+   
+</head>
+<body>
+
+<div class="container">
+
+    <form action="">
+
+        <div class="row">
+
+            
+
+            <div class="col">
+                
+                <h3 class="title">Что вы получаете при покупке месячной подписки у нас: </h3>
+
+                <div class="inputBox">
+                    <p>🞄 Возможность брать книги с премиумных библиотек города.</p>
+                    <p>🞄 Быть приоритетным в очереди за книгами.</p>
+                    <p>🞄 Доступ к статистике читателей города.</p>
+                    
+                </div>
+                <h3 class="title">Стоимость подписки: </h3>
+                <div class="inputBox">
+                    <p>🞄 950тг/месяц</p>
+
+                    
+                </div>
+            </div>
+    
+        </div>
+        <a href="{% url 'main'%}"><input type="button" value="Отменить" class="submit-btn" style="background: #6C757D;"></a>
+        
+        <a href="/payment"><input type="button" value="Продолжить" class="submit-btn"></a>
+        
+        
+
+    </form>
+
+</div>    
+    
+</body>
+</html>

@@ -55,12 +55,16 @@
               
               
             </ul>
+            <a href="/payment_info"><input type="submit" name="buy" class="btn btn-outline-warning" value="Купить подписку" style="margin-right: 1rem;"></input></a>
+              
+            
             
             <form method="POST">
               {% csrf_token %}
             <input type="submit" name="logout" class="btn btn-outline-danger" value="Выйти"></input>
 
           </form>
+          
           </div>
         </div>
       </nav>
@@ -120,7 +124,7 @@
             </div>
             
             <div class="card-footer">
-              <a href="#" class="card-link">Заказать книгу</a>
+              <a href="/zakazy" class="card-link">Заказать книгу</a>
               
             </div>
           </div>
