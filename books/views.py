@@ -34,11 +34,11 @@ def profil_unik(request):
 
 @login_required(login_url='/')
 def ranking(request):
-    sr = SocialRating.objects.all()
-    ac = User.objects.all()
+    score = SocialRating.objects.all()
+    users = User.objects.all()
     context = { 
-        "score":sr,
-        "users":ac
+        "score":score,
+        "users":users,
     }
     if request.POST.get("logout"):
         logout(request)
@@ -169,3 +169,17 @@ def moderator(request):
         logout(request)
         return redirect('/')
     return render(request,'books/moderator.html')
+
+
+@login_required(login_url='/')
+def profilenu(request):
+    return render(request,'books/profile_unik_nu.html')
+
+
+@login_required(login_url='/')
+def profile_unik_enu(request):
+    if request.POST.get("logout"):
+        logout(request)
+        return redirect('/')
+    return render(request,'books/profile_unik_enu.html')
+
