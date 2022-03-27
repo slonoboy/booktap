@@ -11,6 +11,9 @@ def profil_unik(request):
 
 
 def ranking(request):
+    if request.POST.get("logout"):
+        logout(request)
+        return redirect('/')
     return render(request,'books/index.html')
 
 def profile(request):
@@ -40,19 +43,43 @@ def signup(request):
     return render(request,'books/signup.html')
 
 def books(request):
+    if request.POST.get("logout"):
+        logout(request)
+        return redirect('/')
     return render(request,'books/books.html')
 
 def korzina(request):
+    if request.POST.get("logout"):
+        logout(request)
+        return redirect('/')
     return render(request,'books/korzina.html')
 def listq(request):
+    if request.POST.get("logout"):
+        logout(request)
+        return redirect('/')
     return render(request,'books/list.html')
 def main(request):
+    if request.POST.get("logout"):
+        logout(request)
+        return redirect('/')
     return render(request,'books/main.html')
 def payment(request):
+    if request.POST.get("logout"):
+        logout(request)
+        return redirect('/')
     return render(request,'books/payment.html')
 def zakazy(request):
+    if request.POST.get("logout"):
+        logout(request)
+        return redirect('/')
     return render(request,'books/zakazy.html')
 def reg_book(request):
+    if request.POST.get("logout"):
+        logout(request)
+        return redirect('/')
     return render(request,'books/reg_book.html')
 def moderator(request):
+    if request.POST.get("logout"):
+        logout(request)
+        return redirect('/')
     return render(request,'books/moderator.html')

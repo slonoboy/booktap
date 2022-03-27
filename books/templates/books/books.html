@@ -40,8 +40,8 @@
               
             </ul>
             <form method="POST">
-
-            <input type="submit" class="btn btn-outline-danger">Выйти</input>
+              {% csrf_token %}
+            <input type="submit" name="logout" class="btn btn-outline-danger" value="Выйти"></input>
 
           </form>
           </div>
