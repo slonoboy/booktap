@@ -16,5 +16,6 @@ urlpatterns=[
     path('zakazy/',zakazy,name='zakazy'),
     path('reg_book/',reg_book,name='reg_book'),
     path('moderator/',moderator,name='moderator'),
+    path('profilenu/',profilenu,name='profilenu'),
     # path('device/<int:assetid>/',checker)
 ]
