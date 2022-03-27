@@ -15,7 +15,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light ">
     <div class="container mt-0 mb-0">
       <div class="firstt">
-        <a class="navbar-brand flex-grow-1" href="#"><img style=" padding:0 !important; width: 92.8px; height: 40px;" src="{% static 'books/images/logo2.png'%}" alt="sani"></a>
+        <a class="navbar-brand flex-grow-1" href="{% url 'main'%}"><img style=" padding:0 !important; width: 92.8px; height: 40px;" src="{% static 'books/images/logo2.png'%}" alt="sani"></a>
       </div>
 
 
@@ -43,7 +43,7 @@
         <div class="panel panel-default">
           <div class="userprofile social ">
             <div class="userpic"> <img src="{% static 'books/images/unnamed.jpeg'%}" alt="" class="userpicimg"> </div>
-            <h3 class="username">{{t.first_name}}</h3>
+            <h3 class="username">{{t.first_name}} {{t.last_name}} </h3>
             <p>@ob1one</p>
           </div>
           <div class="col-md-12 center">
@@ -67,7 +67,7 @@
               </li>
               <li role="presentation">
                 <h5>19<br>
-                  <a href="signup.html" class="removeblue"> <small>Рейтинг</small>
+                  <a href="{% url 'ranking'%}" class="removeblue"> <small>Рейтинг</small>
                 </h5></a>
               </li>
             </ul>
